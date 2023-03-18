@@ -22,8 +22,8 @@ const openai = new OpenAIApi(configuration)
 app.post("/detect",(req,res)=>{
     const  question =req.body.question;
 const address= `${question} +" "+ 请告诉哪个是公司名字，公司税号，公司地址，公司电话，公司开户行，公司账号，哪个是备注`
-// const address= `Address +" "+ 请告诉哪个是公司名字，公司税号，公司地址，公司电话，公司开户行，公司账号，哪个是备注`
-    openai.createCompletion({
+
+openai.createCompletion({
         model: "text-davinci-003",
         prompt: address,
         max_tokens: 1000,
